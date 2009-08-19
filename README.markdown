@@ -8,7 +8,7 @@ The primary usecase is to pipe output from grep/awk which results in one token p
 
 Assuming you have a logfile where the IP address is the first token (and for some reason, you only had 42 log lines in it, all of which were from local IPs...):
 
-    # cat access.log | awk '{print $1}' | streamstats.py
+    # awk '{print $1}' access.log | streamstats.py
 
        192.168.10.100 |                                        1 
        192.168.10.101 |                                        1 
