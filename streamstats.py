@@ -8,13 +8,14 @@
 # Mikhail Panchenko <m@mihasya.com>
 
 import sys, math as m
-from collections import defaultdict
 
-distribution = defaultdict(lambda: 0)
+distribution = {}
 total = 0
 
 for line in sys.stdin.readlines():
     value = line.strip('\n')
+    if value not in distribution:
+        distribution[value] = 0
     distribution[value] += 1
     total += 1
 
