@@ -2,7 +2,6 @@
 
 import sys, math as m
 from collections import defaultdict
-from pprint import pprint
 
 distribution = defaultdict(lambda: 0)
 total = 0
