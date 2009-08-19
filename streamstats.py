@@ -31,7 +31,7 @@ token_len = max([len(x) for x in distribution.keys()]) + 1
 
 for x in distribution:
     out = "%"+str(token_len)+"s %-40s %s %s\033[m"
-    outlier = (distribution[x] < s['mean']-s['stdev'] or s['mean']+s['stdev'] < distribution[x])
+    outlier = (distribution[x] < s['mean']-(s['stdev']*2) or s['mean']+(s['stdev']*2) < distribution[x])
     if outlier:
         print "\033[0;31m",
         s['outliers'] += 1
