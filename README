@@ -2,7 +2,7 @@
 
 **streamstats** is a very simple tool that takes a stream via stdin and does some very basic statistics on it.
 
-The primary usecase is to pipe output from grep/awk which results in one token per line (for example, an IP address out of an apache logfile) and see if any of the values of the token show up more often than others. A real life example of this is seeing if a particular IP is hitting a particular URL more than seems reasonable.
+The primary usecase is to pipe output from grep/awk which results in one token per line (for example, an IP address out of an apache logfile) and see if any of the values of the token show up more often than others. A real life example of this is seeing if a particular IP is showing up in logs more often than reasonable (something I see our Ops team trying to figure out quite frequently)
 
 ## Sample Output:
 
