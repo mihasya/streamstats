@@ -1,5 +1,12 @@
 #! /usr/bin/python
 
+# License: MIT. Have at it.
+#
+# streamstats is a simple tool for performing basic stats on a stream of
+# values. Pipe something into it and see what happens.
+#
+# Mikhail Panchenko <m@mihasya.com>
+
 import sys, math as m
 from collections import defaultdict
 
