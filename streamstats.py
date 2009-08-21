@@ -8,6 +8,14 @@
 # Mikhail Panchenko <m@mihasya.com>
 
 import sys, math as m
+from optparse import OptionParser
+
+parser = OptionParser()
+
+parser.add_option("-o", "--outliers", action="store_true", default=False,
+    dest="outliers", help="Show only outliers")
+
+(options, args) = parser.parse_args()
 
 distribution = {}
 total = 0
@@ -31,17 +39,18 @@ s['outliers'] = 0
 token_len = max([len(x) for x in distribution.keys()]) + 1
 
 for x in distribution:
-    out = "%"+str(token_len)+"s %-40s %s %s\033[m"
     outlier = (distribution[x] < s['mean']-(s['stdev']*2) or s['mean']+(s['stdev']*2) < distribution[x])
-    if outlier:
-        print "\033[0;31m",
-        s['outliers'] += 1
-    else:
-        print "\033[0m",
-    print out % ( str(x),
-        '|' * int(m.ceil(float(distribution[x])/s['total'] * 40)),
-        distribution[x],
-        ['', '*'][outlier] )
+    if not (not outlier and options.outliers):
+        out = "%"+str(token_len)+"s %-40s %s %s\033[m"
+        if outlier:
+            print "\033[0;31m",
+            s['outliers'] += 1
+        else:
+            print "\033[0m",
+        print out % ( str(x),
+            '|' * int(m.ceil(float(distribution[x])/s['total'] * 40)),
+            distribution[x],
+            ['', '*'][outlier] )
 
 print "\nSome Statsy Things"
 
