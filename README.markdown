@@ -6,11 +6,11 @@ The primary usecase is to pipe output from grep/awk which results in one token p
 
 ## Usage
 
-Usage: streamstats.py [options]
+    Usage: streamstats.py [options]
 
-Options:
-  -h, --help      show this help message and exit
-  -o, --outliers  Show only outliers
+    Options:
+      -h, --help      show this help message and exit
+      -o, --outliers  Show only outliers
 
 ## Sample Output:
 
