@@ -4,6 +4,14 @@
 
 The primary usecase is to pipe output from grep/awk which results in one token per line (for example, an IP address out of an apache logfile) and see if any of the values of the token show up more often than others. A real life example of this is seeing if a particular IP is showing up in logs more often than reasonable (something I see our Ops team trying to figure out quite frequently)
 
+## Usage
+
+Usage: streamstats.py [options]
+
+Options:
+  -h, --help      show this help message and exit
+  -o, --outliers  Show only outliers
+
 ## Sample Output:
 
 Assuming you have a logfile where the IP address is the first token (and for some reason, you only had 42 log lines in it, all of which were from local IPs...):
